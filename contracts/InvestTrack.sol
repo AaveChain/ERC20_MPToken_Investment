@@ -13,8 +13,8 @@ contract InvestmentTracker{
     address public owner;
     uint256 public reserve_amount;
     uint256 public liquidity_amount;
-    uint256 public token_balance; //current contract token balance
-    uint256 public token_amount; // tokens invested
+    uint256 public token_balance; 
+    uint256 public token_amount; 
     uint256 public bonus_tokens;
 
     MindPay MPYToken;
@@ -59,7 +59,7 @@ contract InvestmentTracker{
     }
 
     function getBonusTokens() public returns(uint){
-        if( investedAmount > 1 * 10**18  &&  investedAmount < 5 * 10**18) {   // if else statement
+        if( investedAmount > 1 * 10**18  &&  investedAmount < 5 * 10**18){   
             bonus_tokens = ((10 * token_amount) / 100);
             return bonus_tokens;
         } else if( investedAmount > 5 * 10**18 ){
